@@ -51,6 +51,21 @@ listHobbies("hobbies", person);
 // 1. Add an `address` property to the `person` object, which is an object with properties `street`, `city`, and `zipCode`.
 // 2. Write a method `getAddress` that returns the full address as a single string, e.g., `"123 Main St, Springfield, 12345"`.
 
+
+person.address = {
+    street : "Everton",
+    city: "Sydney",
+    zipcode: 2135,
+}
+
+console.log(person);
+
+person.getAddress = ()=>{
+    return `${person.address.street}, ${person.address.city}, ${person.address.zipcode}`;
+}
+console.log(person.getAddress());
+
+
 // =================================================================================================================
 
 
