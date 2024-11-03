@@ -22,11 +22,20 @@ const person = {
     }
 }
 console.log(person.introduce());
+
 // #### Exercise 2: Updating and Accessing Properties
 // 1. Add a new property `hobbies` to the `person` object, which should be an array of three hobbies.
 // 2. Write a function called `addHobby` that adds a new hobby to the `hobbies` array.
 // 3. Write another function `listHobbies` that logs each hobby from the `hobbies` array.
+person.hobbies = ["writing", "singing", "dancing"];
+console.log(person);
 
+const addHobby = (obj, property, tobeAdded)=>{
+    obj[property].push(tobeAdded);
+    return `${property} has been updated`;
+}
+
+console.log(addHobby(person, "hobbies", "studying"));
 // #### Exercise 3: Nested Objects
 // 1. Add an `address` property to the `person` object, which is an object with properties `street`, `city`, and `zipCode`.
 // 2. Write a method `getAddress` that returns the full address as a single string, e.g., `"123 Main St, Springfield, 12345"`.
