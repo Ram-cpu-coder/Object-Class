@@ -11,72 +11,74 @@
 // 2. Add a method to the `person` object called `introduce` that logs a message like `"Hi, my name is [name] and I am [age] years old."`
 // 3. Test the `introduce` method by calling it.
 
-const person = {
-    name: "Ram",
-    age: 23,
-    isStudent: true,
-    introduce() {
-        return `Hi, my name is ${this.name} and I am ${this.age} years old.`
-    }
-}
-console.log(person.introduce());
-// =================================================================================================================
-
+// const person = {
+//   name: "Ram",
+//   age: 23,
+//   isStudent: true,
+//   introduce() {
+//     return `Hi, my name is ${this.name} and I am ${this.age} years old.`;
+//   },
+// };
+// console.log(person.introduce());
+// // =================================================================================================================
 
 //Exercise 2: Updating and Accessing Properties
 // 1. Add a new property `hobbies` to the `person` object, which should be an array of three hobbies.
 // 2. Write a function called `addHobby` that adds a new hobby to the `hobbies` array.
 // 3. Write another function `listHobbies` that logs each hobby from the `hobbies` array.
-person.hobbies = ["writing", "singing", "dancing"];
-console.log(person);
+// person.hobbies = ["writing", "singing", "dancing"];
+// console.log(person);
 
-const addHobby = (obj, property, tobeAdded) => {
-    obj[property].push(tobeAdded);
-    return `${property} has been updated`;
-}
+// const addHobby = (obj, property, tobeAdded) => {
+//   obj[property].push(tobeAdded);
+//   return `${property} has been updated`;
+// };
 
-console.log(addHobby(person, "hobbies", "studying"));
+// console.log(addHobby(person, "hobbies", "studying"));
 
-const listHobbies = (arr, obj)=>{
-    obj[arr].forEach((item)=>{
-        console.log(item); 
-    })
-}
-listHobbies("hobbies", person);
+// const listHobbies = (arr, obj) => {
+//   obj[arr].forEach((item) => {
+//     console.log(item);
+//   });
+// };
+// listHobbies("hobbies", person);
 
-// =================================================================================================================
+// // =================================================================================================================
 
+// //Exercise 3: Nested Objects
+// // 1. Add an `address` property to the `person` object, which is an object with properties `street`, `city`, and `zipCode`.
+// // 2. Write a method `getAddress` that returns the full address as a single string, e.g., `"123 Main St, Springfield, 12345"`.
 
-//Exercise 3: Nested Objects
-// 1. Add an `address` property to the `person` object, which is an object with properties `street`, `city`, and `zipCode`.
-// 2. Write a method `getAddress` that returns the full address as a single string, e.g., `"123 Main St, Springfield, 12345"`.
+// person.address = {
+//   street: "Everton",
+//   city: "Sydney",
+//   zipcode: 2135,
+// };
 
+// console.log(person);
 
-person.address = {
-    street : "Everton",
-    city: "Sydney",
-    zipcode: 2135,
-}
-
-console.log(person);
-
-person.getAddress = ()=>{
-    return `${person.address.street}, ${person.address.city}, ${person.address.zipcode}`;
-}
-console.log(person.getAddress());
-
+// person.getAddress = () => {
+//   return `${person.address.street}, ${person.address.city}, ${person.address.zipcode}`;
+// };
+// console.log(person.getAddress());
 
 // =================================================================================================================
-
 
 //Exercise 4: Object Iteration
 // 1. Write a function `displayObject` that takes any object as an argument and logs all of its properties and their values.
 // 2. Test `displayObject` with the `person` object.
 
+// const displayObject = (obj) => {
+//   for (let i = 0; obj.length - 1; i++) {
+//     console.log(obj);
+//   }
+// };
+
+// console.log(displayObject(person));
+// =================================================================================================================
 //Part 2: Working with Classes
 
 // =================================================================================================================
-
 
 //Exercise 5: Basic Class Creation
 // 1. Create a class called `Animal` with the following properties in the constructor:
@@ -86,9 +88,21 @@ console.log(person.getAddress());
 // 2. Add a method called `describe` that logs a message like `"This is a [species] named [name] and it is [age] years old."`
 // 3. Create an instance of `Animal` (e.g., a dog or a cat) and call the `describe` method.
 
+class Animal {
+  constructor(name, species, age) {
+    this.name = name;
+    this.species = species;
+    this.age = age;
+  }
+  describe() {
+    return `This is a ${this.species} named ${this.name} and it is ${this.age} years old.`;
+  }
+}
+
+const Dog = new Animal("Leo", "Dog", 2);
+console.log(Dog.describe());
+
 // =================================================================================================================
-
-
 
 //Exercise 6: Adding Methods
 // 1. Add a method `celebrateBirthday` to the `Animal` class, which increases the `age` by 1.
@@ -111,6 +125,5 @@ console.log(person.getAddress());
 // 2. Use a getter for `fullName` to return the combined string, e.g., `"Charlie the Dog"`.
 // 3. Use a setter for `fullName` to split a single string (like `"Charlie the Dog"`) and assign the `name` and `species` properties accordingly.
 // =================================================================================================================
-
 
 // These exercises will help you practice the basics of objects and classes, including creating properties, methods, using inheritance, and exploring getters, setters, and static methods. Let me know if you'd like hints or more detailed examples!
