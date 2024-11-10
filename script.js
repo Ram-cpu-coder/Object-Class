@@ -107,6 +107,13 @@ console.log(Dog.describe());
 //Exercise 6: Adding Methods
 // 1. Add a method `celebrateBirthday` to the `Animal` class, which increases the `age` by 1.
 // 2. Call `celebrateBirthday` on your `Animal` instance and then call `describe` again to see if the age updated.
+
+Animal.prototype.celebrateBirthday = function () {
+  this.age += 1;
+  return `This is the new ${this.age}`;
+};
+console.log(Dog.celebrateBirthday());
+
 // =================================================================================================================
 
 //Exercise 7: Inheritance
